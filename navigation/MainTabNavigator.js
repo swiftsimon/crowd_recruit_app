@@ -3,32 +3,46 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import JobPost from '../screens/JobPost';
+import ViewJobs from '../screens/ViewJobs';
+import Profile from '../screens/Profile';
+
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
 });
 
 HomeStack.navigationOptions = {
+  title: 'Home'
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const PostStack = createStackNavigator({
+  Post: JobPost,
 });
 
-LinksStack.navigationOptions = {
+PostStack.navigationOptions = {
+  title: 'Post Job'
 };
 
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+const ViewJobsStack = createStackNavigator({
+  ViewJobs: ViewJobs,
 });
 
-SettingsStack.navigationOptions = {
+ViewJobsStack.navigationOptions = {
+  title: 'View Jobs'
 };
+
+const ProfileStack = createStackNavigator({
+  Profile: Profile
+})
+
+ProfileStack.navigationOptions = {
+  title: 'Profile'
+}
 
 export default createBottomTabNavigator({
   HomeStack,
-  LinksStack,
-  SettingsStack,
+  PostStack,
+  ViewJobsStack,
+  ProfileStack,
 });

@@ -1,24 +1,25 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, Text } from 'react-native'
 
-export default class LinksScreen extends React.Component {
+export default class SettingsScreen extends React.Component {
   static navigationOptions = {
-    title: 'Links',
+    title: 'View Jobs',
   };
 
   render() {
     return (
       <ScrollView style={styles.container}>
-       
+        <Text>View All Jobs Below</Text>
       </ScrollView>
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 15,
     backgroundColor: '#fff',
-  },
-});
+  }
+})
