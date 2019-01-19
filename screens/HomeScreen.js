@@ -6,12 +6,20 @@ import {
   TouchableOpacity,
   View,
   Button,
+  TextInput
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
 export default class HomeScreen extends React.Component {
+
+  constructor() {
+    super()
+    this.state = {
+     isLoggedIn: false 
+    }
+  }
   static navigationOptions = {
     // header: null,
     title: 'Home'
@@ -26,6 +34,18 @@ export default class HomeScreen extends React.Component {
             <Text style={styles.homeTitleText}>
               Crowd Sourced Recruiting
             </Text>
+            <TextInput
+              style={{ height: 40 }}
+              placeholder="Email"
+              onChangeText={(text) => { this.setState({ userEmail: text }) }}
+              onSubmitEditing={(text) => { this.setState({ userEmail: text }) }}    
+            />
+            <TextInput
+              style={{ height: 40 }}
+              placeholder="Password"
+              onChangeText={(text) => {this.setState({ userPassword: text})}}
+              onSubmitEditing={(text) => { this.setState({ userEmail: text }) }}              
+            />
           </View>
         </ScrollView>
       </View>
