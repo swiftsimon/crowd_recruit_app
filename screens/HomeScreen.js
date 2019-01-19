@@ -22,8 +22,8 @@ export default class HomeScreen extends React.Component {
       <View style={styles.homeContainer}>
 
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.getStartedContainer}>
-            <Text style={styles.getStartedText}>
+          <View style={styles.homeTitleContainer}>
+            <Text style={styles.homeTitleText}>
               Crowd Sourced Recruiting
             </Text>
           </View>
@@ -41,16 +41,11 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingTop: 30,
   },
-  welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
-  },
-  getStartedContainer: {
+  homeTitleContainer: {
     alignItems: 'center',
     marginHorizontal: 50,
   },
-  getStartedText: {
+  homeTitleText: {
     fontSize: 17,
     color: 'rgba(96,100,109, 1)',
     lineHeight: 24,
