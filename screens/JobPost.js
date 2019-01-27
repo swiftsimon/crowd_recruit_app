@@ -1,4 +1,5 @@
 import React from 'react';
+import FBDB from '../firebase/firebase-initialize';
 import { ScrollView, StyleSheet, Text, TextInput, Button } from 'react-native';
 
 export default class JobPost extends React.Component {
@@ -37,7 +38,25 @@ export default class JobPost extends React.Component {
 	}
 
 	onPressLearnMore() {
-	  alert('hello!')
+	  // FBDB.ref('jobs/web/toronto').set({
+	  //   username: 'dudemman2',
+	  //   email: 'yoyo2@gmail.com',
+  	// });
+
+  	// FBDB.ref('user2').remove();
+
+		// FBDB.ref('janitor').on("value", function(snapshot) {
+		//    alert(snapshot.val());
+		// }, function (error) {
+		//    console.log("Error: " + error.code);
+		// });
+
+		FBDB.ref().on("value", function(snapshot) {
+		   alert(snapshot.val().janitor);
+		}, function (error) {
+		   console.log("Error: " + error.code);
+		});
+
 	}
 }
 
