@@ -1,6 +1,6 @@
 import firebase from "firebase";
 
-// Initialize Firebase
+// // Initialize Firebase
 var config = {
   apiKey: "AIzaSyDb5IsWm6XmlnaDShdvXv-8Xhpdq2TKMyQ",
   authDomain: "crowd-recruit-app.firebaseapp.com",
@@ -10,6 +10,7 @@ var config = {
   messagingSenderId: "231652914750"
 };
 
-let firebase = firebase.initializeApp(config);
+firebase.initializeApp(config);
+let FBDB = firebase.database();
 
-export default firebase;
+export default FBDB;
